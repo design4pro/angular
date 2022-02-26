@@ -27,8 +27,8 @@ function createReleaseConfigWithScopeFilter({
   projectRoot,
   buildOutput,
 }) {
-  projectRoot = projectRoot || `packages/${projectScope}`;
-  buildOutput = buildOutput || `dist/packages/${projectScope}`;
+  projectRoot = projectRoot || `libs/${projectScope}`;
+  buildOutput = buildOutput || `dist/libs/${projectScope}`;
 
   const relativeWorkspaceRoot = buildReversePath(projectRoot);
   const relativeBuildOutput = `${relativeWorkspaceRoot}/${buildOutput}`;
