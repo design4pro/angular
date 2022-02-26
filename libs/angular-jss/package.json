@@ -1,11 +1,33 @@
 {
   "name": "@design4pro/angular-jss",
   "version": "0.0.1",
+  "keywords": [
+    "angular",
+    "ng",
+    "jss",
+    "css-in-js"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/design4pro/angular-jss.git"
+  },
+  "author": {
+    "name": "Rafał Wolak",
+    "email": "r.wolak@design4.pro",
+    "url": "https://www.design4.pro"
+  },
+  "bugs": {
+    "url": "https://github.com/design4pro/angular-jss/issues/"
+  },
+  "homepage": "https://github.com/design4pro/angular-jss#readme",
   "peerDependencies": {
     "@angular/common": "^13.2.0",
     "@angular/core": "^13.2.0"
   },
   "dependencies": {
     "tslib": "^2.3.0"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
