@@ -22,7 +22,11 @@
   "homepage": "https://github.com/design4pro/angular-jss#readme",
   "peerDependencies": {
     "@angular/common": "^13.2.0",
-    "@angular/core": "^13.2.0"
+    "@angular/core": "^13.2.0",
+    "jss": "^10.9.0",
+    "jss-plugin-global": "^10.9.0",
+    "jss-plugin-rule-value-function": "^10.9.0",
+    "memoize-one": "^6.0.0" 
   },
   "dependencies": {
     "tslib": "^2.3.0"
