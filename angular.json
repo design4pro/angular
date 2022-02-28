@@ -1,7 +1,8 @@
 {
   "version": 2,
   "projects": {
-    "angular-jss": "apps/angular-jss",
-    "angular-jss-e2e": "apps/angular-jss-e2e"
+    "webpage": "apps/webpage",
+    "webpage-e2e": "apps/webpage-e2e",
+    "angular-jss": "libs/angular-jss"
   }
 }

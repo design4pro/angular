@@ -1,23 +1,20 @@
 {
   "projectType": "application",
-  "root": "apps/angular-jss",
-  "sourceRoot": "apps/angular-jss/src",
+  "root": "apps/webpage",
+  "sourceRoot": "apps/webpage/src",
   "prefix": "angular-jss",
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "dist/apps/angular-jss",
-        "index": "apps/angular-jss/src/index.html",
-        "main": "apps/angular-jss/src/main.ts",
-        "polyfills": "apps/angular-jss/src/polyfills.ts",
-        "tsConfig": "apps/angular-jss/tsconfig.app.json",
-        "assets": [
-          "apps/angular-jss/src/favicon.ico",
-          "apps/angular-jss/src/assets"
-        ],
-        "styles": ["apps/angular-jss/src/styles.css"],
+        "outputPath": "dist/apps/webpage",
+        "index": "apps/webpage/src/index.html",
+        "main": "apps/webpage/src/main.ts",
+        "polyfills": "apps/webpage/src/polyfills.ts",
+        "tsConfig": "apps/webpage/tsconfig.app.json",
+        "assets": ["apps/webpage/src/favicon.ico", "apps/webpage/src/assets"],
+        "styles": ["apps/webpage/src/styles.css"],
         "scripts": []
       },
       "configurations": {
@@ -36,8 +33,8 @@
           ],
           "fileReplacements": [
             {
-              "replace": "apps/angular-jss/src/environments/environment.ts",
-              "with": "apps/angular-jss/src/environments/environment.prod.ts"
+              "replace": "apps/webpage/src/environments/environment.ts",
+              "with": "apps/webpage/src/environments/environment.prod.ts"
             }
           ],
           "outputHashing": "all"
@@ -57,10 +54,10 @@
       "executor": "@angular-devkit/build-angular:dev-server",
       "configurations": {
         "production": {
-          "browserTarget": "angular-jss:build:production"
+          "browserTarget": "webpage:build:production"
         },
         "development": {
-          "browserTarget": "angular-jss:build:development"
+          "browserTarget": "webpage:build:development"
         }
       },
       "defaultConfiguration": "development"
@@ -68,23 +65,23 @@
     "extract-i18n": {
       "executor": "@angular-devkit/build-angular:extract-i18n",
       "options": {
-        "browserTarget": "angular-jss:build"
+        "browserTarget": "webpage:build"
       }
     },
     "lint": {
       "executor": "@nrwl/linter:eslint",
       "options": {
         "lintFilePatterns": [
-          "apps/angular-jss/src/**/*.ts",
-          "apps/angular-jss/src/**/*.html"
+          "apps/webpage/src/**/*.ts",
+          "apps/webpage/src/**/*.html"
         ]
       }
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/apps/angular-jss"],
+      "outputs": ["coverage/apps/webpage"],
       "options": {
-        "jestConfig": "apps/angular-jss/jest.config.js",
+        "jestConfig": "apps/webpage/jest.config.js",
         "passWithNoTests": true
       }
     }

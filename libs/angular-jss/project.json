@@ -1,0 +1,42 @@
+{
+  "projectType": "library",
+  "root": "libs/angular-jss",
+  "sourceRoot": "libs/angular-jss/src",
+  "prefix": "ng-jss",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/angular:package",
+      "outputs": ["dist/libs/angular-jss"],
+      "options": {
+        "project": "libs/angular-jss/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/angular-jss/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/angular-jss/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/angular-jss"],
+      "options": {
+        "jestConfig": "libs/angular-jss/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/angular-jss/src/**/*.ts",
+          "libs/angular-jss/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": ["angular-jss"]
+}
