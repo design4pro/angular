@@ -36,6 +36,17 @@
           "libs/angular-jss/src/**/*.html"
         ]
       }
+    },
+    "release": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": [
+          {
+            "command": "npx semantic-release"
+          }
+        ],
+        "cwd": "libs/angular-jss"
+      }
     }
   },
   "tags": ["angular-jss"]
