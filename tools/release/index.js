@@ -75,7 +75,8 @@ function createReleaseConfigWithScopeFilter({
     },
     tagFormat: `${projectScope}/v\${version}`,
     branches: [
-      'master',
+      'main', 
+      'next',
       { name: 'beta', prerelease: true },
       { name: 'alpha', prerelease: true },
     ],
