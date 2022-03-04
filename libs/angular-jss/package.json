@@ -22,9 +22,11 @@
     "url": "https://github.com/design4pro/angular-jss/issues/"
   },
   "homepage": "https://github.com/design4pro/angular-jss#readme",
-  "dependencies": {
+  "peerDependencies": {
     "@angular/common": "^13.2.0",
-    "@angular/core": "^13.2.0",
+    "@angular/core": "^13.2.0"
+  },
+  "dependencies": {
     "jss": "^10.9.0",
     "jss-plugin-camel-case": "^10.9.0",
     "jss-plugin-global": "^10.9.0",
