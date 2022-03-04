@@ -1,8 +1,7 @@
 import { getDynamicStyles, StyleSheet, StyleSheetFactoryOptions } from 'jss';
-import warning from 'tiny-warning';
+import { Theme } from '../../angular-jss.types';
 import { StyledProps } from '../../styled/styled.interface';
 import { ThemeContext } from '../../theme/theme-context';
-import { Theme } from '../../angular-jss.types';
 import { JssContext } from '../context';
 import { getManager } from '../managers';
 import { jss as defaultJss } from '../setup';
@@ -35,12 +34,13 @@ export const getStyles = (options: Options<JssContext, ThemeContext>) => {
     return styles;
   }
 
-  warning(
-    styles.length !== 0,
-    `[JSS] <${
-      options.name || 'Hook'
-    } />'s styles function doesn't rely on the "theme" argument. We recommend declaring styles as an object instead.`
-  );
+  if (styles.length !== 0) {
+    console.warn(
+      `[JSS] <${
+        options.name || 'Hook'
+      } />'s styles function doesn't rely on the "theme" argument. We recommend declaring styles as an object instead.`
+    );
+  }
 
   return styles(options.theme);
 };

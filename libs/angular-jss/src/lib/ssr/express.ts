@@ -1,5 +1,5 @@
 import { NextFunction, Request, Response } from 'express';
-import { Jss } from '../angular-jss.service';
+import { AngularJss } from '../angular-jss.service';
 
 export function jssSSR(name = 'jss-ssr') {
   return function (req: Request, res: Response, next: NextFunction) {
@@ -7,7 +7,7 @@ export function jssSSR(name = 'jss-ssr') {
 
     res.send = function (string: Buffer | string) {
       // JSS SSR
-      const sheet = Jss.sheetRegistry()?.toString({ format: false });
+      const sheet = AngularJss.sheetRegistry()?.toString({ format: false });
       const css = `<style data-jss data-meta="${name}">${sheet}</style>`;
 
       let body = string instanceof Buffer ? string.toString() : string;
