@@ -34,6 +34,8 @@ export function markAsDecorated<T>(
 }
 
 export function generateStyles(
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  this: any,
   styleFn: StyledProps,
   doCheck: BehaviorSubject<StyledProps>,
   onDestroy: Subject<void>

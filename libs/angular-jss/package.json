@@ -1,6 +1,8 @@
 {
   "name": "@design4pro/angular-jss",
   "version": "0.0.1",
+  "description": "Angular for JSS",
+  "license": "MIT",
   "keywords": [
     "angular",
     "ng",
@@ -24,9 +26,10 @@
     "@angular/common": "^13.2.0",
     "@angular/core": "^13.2.0",
     "jss": "^10.9.0",
+    "jss-plugin-camel-case": "^10.9.0",
     "jss-plugin-global": "^10.9.0",
     "jss-plugin-rule-value-function": "^10.9.0",
-    "memoize-one": "^6.0.0" 
+    "memoize-one": "^6.0.0"
   },
   "dependencies": {
     "tslib": "^2.3.0"
