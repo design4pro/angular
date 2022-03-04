@@ -40,7 +40,8 @@ function decorateNgOnCheck(
   props: StyledProps,
   initialized: boolean
 ) {
-  return function () {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  return function (this: any) {
     // Redecorate ngOnDestroy if it was complied
     if (this._onDestroy$.isStopped) {
       this._doCheck$ = new BehaviorSubject({} as StyledProps);
@@ -70,7 +71,9 @@ function decorateNgOnCheck(
 }
 
 function decorateNgOnDestroy(ngOnDestroy: (() => void) | null | undefined) {
-  return function () {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  return function (this: any) {
+
     // Invoke the original `ngOnDestroy` if it exists
     if (ngOnDestroy) {
       ngOnDestroy.call(this);
