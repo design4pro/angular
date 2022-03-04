@@ -13,6 +13,10 @@
 
 ## Features
 
+- [x] Component decorator `Styled`
+- [x] Theming with `Theme`
+- [x] Server Side Rendering with Angular Universal
+
 ## Table of Contents
 
 - [Installation](#installation)

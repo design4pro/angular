@@ -1,7 +1,7 @@
 {
   "name": "@design4pro/angular-jss",
   "version": "0.0.1",
-  "description": "Angular for JSS",
+  "description": "JSS integration with Angular",
   "license": "MIT",
   "keywords": [
     "angular",
@@ -22,15 +22,13 @@
     "url": "https://github.com/design4pro/angular-jss/issues/"
   },
   "homepage": "https://github.com/design4pro/angular-jss#readme",
-  "peerDependencies": {
+  "dependencies": {
     "@angular/common": "^13.2.0",
     "@angular/core": "^13.2.0",
     "jss": "^10.9.0",
     "jss-plugin-camel-case": "^10.9.0",
     "jss-plugin-global": "^10.9.0",
-    "jss-plugin-rule-value-function": "^10.9.0"
-  },
-  "dependencies": {
+    "jss-plugin-rule-value-function": "^10.9.0",
     "tslib": "^2.3.0"
   },
   "publishConfig": {

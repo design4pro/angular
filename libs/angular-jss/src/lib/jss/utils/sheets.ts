@@ -34,7 +34,7 @@ export const getStyles = (options: Options<JssContext, ThemeContext>) => {
     return styles;
   }
 
-  if (styles.length !== 0) {
+  if (styles.length === 0) {
     console.warn(
       `[JSS] <${
         options.name || 'Hook'
