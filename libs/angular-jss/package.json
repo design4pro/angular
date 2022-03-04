@@ -28,8 +28,7 @@
     "jss": "^10.9.0",
     "jss-plugin-camel-case": "^10.9.0",
     "jss-plugin-global": "^10.9.0",
-    "jss-plugin-rule-value-function": "^10.9.0",
-    "memoize-one": "^6.0.0"
+    "jss-plugin-rule-value-function": "^10.9.0"
   },
   "dependencies": {
     "tslib": "^2.3.0"

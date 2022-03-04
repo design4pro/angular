@@ -46,7 +46,6 @@
     "jss-plugin-camel-case": "^10.9.0",
     "jss-plugin-global": "^10.9.0",
     "jss-plugin-rule-value-function": "^10.9.0",
-    "memoize-one": "^6.0.0",
     "rxjs": "~7.4.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.11.4"
