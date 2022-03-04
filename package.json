@@ -69,7 +69,7 @@
     "@nrwl/linter": "13.8.3",
     "@nrwl/nx-cloud": "latest",
     "@nrwl/tao": "13.8.4",
-    "@nrwl/workspace": "13.8.3",
+    "@nrwl/workspace": "13.8.4",
     "@semantic-release/changelog": "^6.0.1",
     "@semantic-release/exec": "^6.0.3",
     "@semantic-release/git": "^10.0.1",
