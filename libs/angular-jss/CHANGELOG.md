@@ -1,3 +1,19 @@
+## [1.0.1](https://github.com/design4pro/angular-jss/compare/angular-jss/v1.0.0...angular-jss/v1.0.1) (2022-03-04)
+
+### Bug Fixes
+
+- **angular-jss:** imports and types ([0ed3d7f](https://github.com/design4pro/angular-jss/commit/0ed3d7fd8e014faa80e326cf6435b1a7b9a200cd))
+
+### Miscellaneous
+
+- Merge pull request #18 from design4pro/develop ([6900d82](https://github.com/design4pro/angular-jss/commit/6900d82562f202dd999717acf99d272f536c063b)), closes [#18](https://github.com/design4pro/angular-jss/issues/18)
+- Merge pull request #12 from design4pro/dependabot/npm_and_yarn/ts-jest-27.1.3 ([8600702](https://github.com/design4pro/angular-jss/commit/8600702694e29d3ea09876c5b04686797472fec2)), closes [#12](https://github.com/design4pro/angular-jss/issues/12)
+- Merge pull request #11 from design4pro/dependabot/npm_and_yarn/angular-eslint/eslint-plugin-13.1.0 ([9d68836](https://github.com/design4pro/angular-jss/commit/9d688365bdd04e5b081f94e0aad6c207ce868fc8)), closes [#11](https://github.com/design4pro/angular-jss/issues/11)
+- Merge pull request #10 from design4pro/dependabot/npm_and_yarn/types/node-17.0.21 ([8cdda9c](https://github.com/design4pro/angular-jss/commit/8cdda9cd0475b450f2156e9a54cabe4cafe3489e)), closes [#10](https://github.com/design4pro/angular-jss/issues/10)
+- Merge pull request #9 from design4pro/dependabot/npm_and_yarn/eslint-8.10.0 ([d97f886](https://github.com/design4pro/angular-jss/commit/d97f886aa621fb29708388df59b50bfc304025c4)), closes [#9](https://github.com/design4pro/angular-jss/issues/9)
+- Merge branch 'main' into dependabot/npm_and_yarn/eslint-8.10.0 ([d17e20e](https://github.com/design4pro/angular-jss/commit/d17e20edd7dbcbf882b745da918fd33a4ee2b339))
+- Merge pull request #8 from design4pro/dependabot/npm_and_yarn/eslint-config-prettier-8.4.0 ([8e1e915](https://github.com/design4pro/angular-jss/commit/8e1e91541f4c13125a881727a4d26f0220d7672e)), closes [#8](https://github.com/design4pro/angular-jss/issues/8)
+
 # 1.0.0 (2022-03-02)
 
 ### Bug Fixes
