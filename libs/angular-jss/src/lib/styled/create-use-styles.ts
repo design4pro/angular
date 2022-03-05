@@ -1,4 +1,5 @@
-import { BehaviorSubject, Subject, takeUntil } from 'rxjs';
+import { BehaviorSubject, Subject } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
 import { useJss } from '../hooks/use-jss';
 import { useMemo } from '../hooks/use-memo';
 import { useTheme } from '../hooks/use-theme';
