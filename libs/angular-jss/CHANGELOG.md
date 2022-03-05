@@ -1,3 +1,17 @@
+## [1.0.3](https://github.com/design4pro/angular-jss/compare/angular-jss/v1.0.2...angular-jss/v1.0.3) (2022-03-05)
+
+### Bug Fixes
+
+- **angular-jss:** dependencies ([f3b177e](https://github.com/design4pro/angular-jss/commit/f3b177e335c019048df4e5a25a207855f2b939e3))
+- **angular-jss:** rxjs import fix ([7cab251](https://github.com/design4pro/angular-jss/commit/7cab2510940f33f43ab13cbe9727edd0266f0c87))
+
+### Miscellaneous
+
+- Merge pull request #29 from design4pro/develop ([d96c2dc](https://github.com/design4pro/angular-jss/commit/d96c2dc28cb616e5bff147f1a55adf231ecbc3d8)), closes [#29](https://github.com/design4pro/angular-jss/issues/29)
+- Merge pull request #24 from design4pro/dependabot/npm_and_yarn/nrwl/workspace-13.8.4 ([3df6b8a](https://github.com/design4pro/angular-jss/commit/3df6b8a072ec4e6ab541e4ee1777c75449bafca4)), closes [#24](https://github.com/design4pro/angular-jss/issues/24)
+- Merge pull request #28 from design4pro/dependabot/npm_and_yarn/rxjs-7.5.4 ([43cb9ff](https://github.com/design4pro/angular-jss/commit/43cb9ff4df2b3b6a76cebb3c8f978c1b26cdef73)), closes [#28](https://github.com/design4pro/angular-jss/issues/28)
+- Merge pull request #27 from design4pro/dependabot/npm_and_yarn/nrwl/tao-13.8.4 ([282bffc](https://github.com/design4pro/angular-jss/commit/282bffcebba5f1fbfbc6a92ac8463b227729f95d)), closes [#27](https://github.com/design4pro/angular-jss/issues/27)
+
 ## [1.0.2](https://github.com/design4pro/angular-jss/compare/angular-jss/v1.0.1...angular-jss/v1.0.2) (2022-03-04)
 
 ### Bug Fixes
