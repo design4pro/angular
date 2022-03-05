@@ -31,6 +31,8 @@
     "jss-plugin-camel-case": "^10.9.0",
     "jss-plugin-global": "^10.9.0",
     "jss-plugin-rule-value-function": "^10.9.0",
+    "reflect-metadata": "^0.1.13",
+    "rxjs": "^7.5.4",
     "tslib": "^2.3.0"
   },
   "publishConfig": {
