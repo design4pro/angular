@@ -29,5 +29,5 @@ jobs:
           git config user.email "<>"
 
       - name: Build & Deploy 🚀
-      - run: |
+        run: |
           npm run deploy -- --message="docs(package): gh-pages"
