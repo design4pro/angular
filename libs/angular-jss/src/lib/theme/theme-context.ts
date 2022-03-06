@@ -1,14 +1,11 @@
 import { Injectable } from '@angular/core';
-import { ThemeBreakpoints } from '../angular-jss.types';
+import { ThemeBreakpoints, ThemePalette } from '../angular-jss.types';
 import { Store } from '../utils/store';
-
-export type ThemeType = string | 'auto' | 'light' | 'dark';
 
 export class ThemeContext {
   breakpoints?: ThemeBreakpoints;
   direction?: string;
-  overrides?: object;
-  props?: object;
+  palette?: ThemePalette;
 }
 
 @Injectable()

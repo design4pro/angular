@@ -1,6 +1,6 @@
 import { getDynamicStyles, StyleSheet, StyleSheetFactoryOptions } from 'jss';
 import { Theme } from '../../angular-jss.types';
-import { StyledProps } from '../../styled/styled.interface';
+import { StyledProps } from '../../styled/styled.types';
 import { ThemeContext } from '../../theme/theme-context';
 import { JssContext } from '../context';
 import { getManager } from '../managers';

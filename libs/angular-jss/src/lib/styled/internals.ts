@@ -9,7 +9,7 @@ import {
   DirectiveDef,
   DirectiveType,
 } from './ivy';
-import { StyledProps } from './styled.interface';
+import { StyledProps } from './styled.types';
 
 /**
  * Applied to definitions and informs that class is decorated

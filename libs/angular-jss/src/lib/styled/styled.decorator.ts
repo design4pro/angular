@@ -2,7 +2,7 @@ import 'reflect-metadata';
 import { BehaviorSubject, Subject } from 'rxjs';
 import { generateStyles, markAsDecorated, STYLED_PROPS } from './internals';
 import { ComponentType, DirectiveType } from './ivy';
-import { StyledProps } from './styled.interface';
+import { StyledProps } from './styled.types';
 
 // eslint-disable-next-line @typescript-eslint/naming-convention
 export function StyledProp<T>(): PropertyDecorator {

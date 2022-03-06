@@ -15,7 +15,7 @@ import {
   updateDynamicRules,
 } from '../jss/utils/sheets';
 import { ThemeContext } from '../theme/theme-context';
-import { StyledProps } from './styled.interface';
+import { StyledProps } from './styled.types';
 
 const createUseStyles =
   (doCheck: BehaviorSubject<StyledProps>, onDestroy: Subject<void>) =>
