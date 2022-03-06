@@ -1,3 +1,13 @@
+# [1.1.0](https://github.com/design4pro/angular-jss/compare/angular-jss/v1.0.3...angular-jss/v1.1.0) (2022-03-06)
+
+### Features
+
+- **angular-jss:** theme options ([f8c4e94](https://github.com/design4pro/angular-jss/commit/f8c4e949504b4ca56f75d90b3b7cc1ce2dfb8f31))
+
+### Miscellaneous
+
+- Merge pull request #30 from design4pro/develop ([a954bc4](https://github.com/design4pro/angular-jss/commit/a954bc4cc78dadd109a937903b1578180ab8f98a)), closes [#30](https://github.com/design4pro/angular-jss/issues/30)
+
 ## [1.0.3](https://github.com/design4pro/angular-jss/compare/angular-jss/v1.0.2...angular-jss/v1.0.3) (2022-03-05)
 
 ### Bug Fixes
