@@ -1,3 +1,13 @@
+## [1.1.2](https://github.com/design4pro/angular-jss/compare/angular-jss/v1.1.1...angular-jss/v1.1.2) (2022-03-06)
+
+### Bug Fixes
+
+- **angular-jss:** ci gh-pages fix ([60834f9](https://github.com/design4pro/angular-jss/commit/60834f9b2923523db837692f788dc92cb9d6ca90))
+
+### Miscellaneous
+
+- Merge pull request #34 from design4pro/develop ([3336257](https://github.com/design4pro/angular-jss/commit/3336257f4e065459c38b96c247551e3969e2ec6f)), closes [#34](https://github.com/design4pro/angular-jss/issues/34)
+
 ## [1.1.1](https://github.com/design4pro/angular-jss/compare/angular-jss/v1.1.0...angular-jss/v1.1.1) (2022-03-06)
 
 ### Bug Fixes
