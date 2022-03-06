@@ -17,10 +17,10 @@ jobs:
     if: "!contains(github.event.head_commit.message, 'skip ci')"
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout [main]
+      - name: Checkout [main] 🛎️
         uses: actions/checkout@v2
 
-      - name: Install Dependencies
+      - name: Install Dependencies 🔧
         run: npm install --no-package-lock
 
       - name: Lint Workspace & Code
@@ -31,7 +31,7 @@ jobs:
       - name: Unit Tests
         run: npm run affected:test -- --all
         
-      - name: Build, Release on GitHub & Publish to NPM
+      - name: Build, Release on GitHub & Publish to NPM 🚀
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN || secrets.GITHUB_TOKEN }}
