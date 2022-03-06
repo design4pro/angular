@@ -1,4 +1,3 @@
-import 'reflect-metadata';
 import { BehaviorSubject, Subject } from 'rxjs';
 import { generateStyles, markAsDecorated, STYLED_PROPS } from './internals';
 import { ComponentType, DirectiveType } from './ivy';
@@ -73,7 +72,6 @@ function decorateNgOnCheck(
 function decorateNgOnDestroy(ngOnDestroy: (() => void) | null | undefined) {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   return function (this: any) {
-
     // Invoke the original `ngOnDestroy` if it exists
     if (ngOnDestroy) {
       ngOnDestroy.call(this);
