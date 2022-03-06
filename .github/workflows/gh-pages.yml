@@ -23,11 +23,10 @@ jobs:
 
       - name: Install Dependencies 🔧
         run: npm install --no-package-lock
+      - run: npm run build -- --prod --baseHref=/angular-jss/
 
-      - run: |
-          git config user.name "GitHub Actions Bot"
-          git config user.email "<>"
-
-      - name: Build & Deploy 🚀
-        run: |
-          npm run deploy -- --message="docs(package): gh-pages"
+      - name: Deploy to GitHub Pages 🚀
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist/apps/webpage
