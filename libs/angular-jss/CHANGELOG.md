@@ -1,3 +1,15 @@
+## [1.1.1](https://github.com/design4pro/angular-jss/compare/angular-jss/v1.1.0...angular-jss/v1.1.1) (2022-03-06)
+
+### Bug Fixes
+
+- **angular-jss:** clean dependencies ([fc71482](https://github.com/design4pro/angular-jss/commit/fc714820717eac497e056f7bdadcf80cc09e0173))
+
+### Miscellaneous
+
+- Merge pull request #33 from design4pro/develop ([a218e8c](https://github.com/design4pro/angular-jss/commit/a218e8cd829ba553a5ffb06c4578528702fa7b65)), closes [#33](https://github.com/design4pro/angular-jss/issues/33)
+- Merge pull request #32 from design4pro/develop ([de0746d](https://github.com/design4pro/angular-jss/commit/de0746d9fd19c821f96e9bcfcf0bb19654339bbe)), closes [#32](https://github.com/design4pro/angular-jss/issues/32)
+- Merge pull request #31 from design4pro/develop ([5eb8bfe](https://github.com/design4pro/angular-jss/commit/5eb8bfea81d6bb109dba3518050cbc2545f8157b)), closes [#31](https://github.com/design4pro/angular-jss/issues/31)
+
 # [1.1.0](https://github.com/design4pro/angular-jss/compare/angular-jss/v1.0.3...angular-jss/v1.1.0) (2022-03-06)
 
 ### Features
