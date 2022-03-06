@@ -55,7 +55,7 @@ async function insertVersions(packageRoot: string) {
     resolvedPackageRoot,
     'src',
     'utils',
-    'versions.js'
+    'versions.ts'
   );
 
   if (!existsSync(packageJsonPath)) {
