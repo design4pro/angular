@@ -13,16 +13,21 @@ jobs:
     runs-on: ubuntu-latest
     if: ${{ github.event_name != 'pull_request' }}
     steps:
-      - uses: actions/checkout@v2
-        name: Checkout [main]
+      - name: Checkout [main]
+        uses: actions/checkout@v2
         with:
           fetch-depth: 0
+
       - name: Derive appropriate SHAs for base and head for `nx affected` commands
         uses: nrwl/nx-set-shas@v2
+
       - uses: actions/setup-node@v1
         with:
           node-version: '14'
-      - run: npm install --no-package-lock
+
+      - name: Install Dependencies
+        run: npm install --no-package-lock
+        
       - run: npx nx-cloud start-ci-run
       - run: npx nx affected --target=build --parallel --max-parallel=3
       - run: npx nx affected --target=test --parallel --max-parallel=2
@@ -31,16 +36,22 @@ jobs:
     runs-on: ubuntu-latest
     if: ${{ github.event_name == 'pull_request' }}
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout [main]
+        uses: actions/checkout@v2
         with:
           ref: ${{ github.event.pull_request.head.ref }}
           fetch-depth: 0
+
       - name: Derive appropriate SHAs for base and head for `nx affected` commands
         uses: nrwl/nx-set-shas@v2
+
       - uses: actions/setup-node@v1
         with:
           node-version: '14'
-      - run: npm install --no-package-lock
+
+      - name: Install Dependencies
+        run: npm install --no-package-lock
+
       - run: npx nx-cloud start-ci-run
       - run: npx nx affected --target=build --parallel --max-parallel=3
       - run: npx nx affected --target=test --parallel --max-parallel=2
@@ -53,10 +64,15 @@ jobs:
       matrix:
         agent: [1, 2, 3]
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout [main]
+        uses: actions/checkout@v2
+
       - uses: actions/setup-node@v1
         with:
           node-version: '14'
-      - run: npm install --no-package-lock
+
+      - name: Install Dependencies
+        run: npm install --no-package-lock
+
       - name: Start Nx Agent ${{ matrix.agent }}
         run: npx nx-cloud start-agent

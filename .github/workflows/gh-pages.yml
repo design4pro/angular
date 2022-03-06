@@ -1,0 +1,36 @@
+name: GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    types: [closed]
+
+env:
+  CI: true
+
+jobs:
+  release:
+    name: Build & Publish
+    if: github.event.action == 'closed' && github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout [main]
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Install Dependencies
+        run: npm install --no-package-lock
+
+      - name: Build & Deploy 🚀
+        run: npm run build -- --prod --baseHref=/angular-jss/
+
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@v4.2.5
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: gh-pages # The branch the action should deploy to.
+          folder: dist/apps/website # The folder the action should deploy.
+          clean: true # Automatically remove deleted files from the deploy branch
