@@ -1,26 +1,31 @@
-import { Theme, ThemeBreakpoints } from '../angular-jss.types';
+import { Theme, ThemeBreakpoints, ThemePalette } from '../angular-jss.types';
 import deepmerge from '../utils/deepmerge';
 import createBreakpoints from './create-breakpoints';
+import createPalette from './create-palette';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 function createTheme(options: Theme = {}, ...args: any): Theme {
-  const { breakpoints: input = {}, ...other } = options;
+  const {
+    breakpoints: breakpointsInput = {},
+    palette: paletteInput = {},
+    ...other
+  } = options;
 
-  const _breakpoints = createBreakpoints(input as ThemeBreakpoints);
+  const breakpoints = createBreakpoints(breakpointsInput as ThemeBreakpoints);
+  const palette = createPalette(paletteInput as ThemePalette);
 
-  let theme = deepmerge(
+  let theme = deepmerge<Theme>(
     {
-      breakpoints: _breakpoints,
+      breakpoints: breakpoints,
       direction: 'ltr',
-      overrides: {}, // Inject custom styles
-      props: {}, // Provide default props
+      palette: palette,
     },
     other
   );
 
   theme = args.reduce(
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    (acc: Theme, argument: any) => deepmerge(acc, argument),
+    (acc: Theme, argument: any) => deepmerge<Theme>(acc, argument),
     theme
   );
 

@@ -1,4 +1,5 @@
 import { JssOptions } from './jss/types';
+import { ColorCommon } from './theme/colors/common';
 
 export interface Options extends JssOptions {
   normalize?: boolean;
@@ -7,8 +8,7 @@ export interface Options extends JssOptions {
 export interface Theme {
   breakpoints?: ThemeBreakpoints;
   direction?: string;
-  overrides?: object;
-  props?: object;
+  palette?: ThemePalette;
 }
 
 export interface ThemeBreakpoints {
@@ -23,4 +23,15 @@ export interface ThemeBreakpoints {
   width: (key: string) => string;
   unit?: string;
   step?: number;
+}
+
+export type ThemeType = string | 'auto' | 'light' | 'dark';
+
+export interface ThemePaletteCommonColor {
+  [key: string]: ColorCommon;
+}
+
+export interface ThemePalette {
+  mode: ThemeType;
+  common: typeof ColorCommon;
 }

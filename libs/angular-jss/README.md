@@ -13,6 +13,12 @@
 
 ## Features
 
+- [x] Component decorator `Styled`
+- [x] Theming with `Theme`
+- [ ] Theme switching (dark/light mode)
+- [x] Server Side Rendering with Angular Universal
+- [ ] Critical CSS
+
 ## Table of Contents
 
 - [Installation](#installation)
@@ -102,6 +108,45 @@ export class AppComponent {
 ```
 
 ## Config options
+
+```ts
+import { create, Jss } from 'jss';
+import extend from 'jss-plugin-extend';
+import propsSort from 'jss-plugin-props-sort';
+import { JssOptions } from '@design4pro/angular-jss';
+
+const jss: Jss = create({
+  // additional JSS plugins @see https://cssinjs.org/plugins?v=v10.9.0
+  plugins: [
+    extend(),
+    propsSort()
+  ],
+});
+
+const jssOptions: JssOptions = {
+  jss: jss,
+  normalize: false // disable normalizing (normalize.css)
+};
+
+const theme: Theme = {
+  palette: {
+    primary: {
+      main: '#00bcd4' // use in decorator `theme.palette?.primary?.main`
+    },
+    secondary: {
+      main: '#f50057'
+    }
+  }
+};
+
+@NgModule({
+  declarations: [AppComponent],
+  imports: [BrowserModule, AngularJssModule.forRoot(jssOptions, theme)],
+  providers: [],
+  bootstrap: [AppComponent],
+})
+export class AppModule {}
+```
 
 ## License
 
