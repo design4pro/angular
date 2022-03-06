@@ -18,15 +18,19 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout [main]
-        uses: actions/checkout@v1
+        uses: actions/checkout@v2
+
       - name: Install Dependencies
         run: npm install --no-package-lock
+
       - name: Lint Workspace & Code
         run: |
           npm run nx -- workspace-lint
           npm run affected:lint -- --all
+
       - name: Unit Tests
         run: npm run affected:test -- --all
+        
       - name: Build, Release on GitHub & Publish to NPM
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

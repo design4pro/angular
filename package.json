@@ -2,6 +2,7 @@
   "name": "design4pro",
   "version": "0.0.0",
   "license": "MIT",
+  "homepage": "https://design4pro.github.io/angular-jss",
   "scripts": {
     "postinstall": "node ./decorate-angular-cli.js && ngcc --properties es2015 browser module main",
     "ng": "nx",
