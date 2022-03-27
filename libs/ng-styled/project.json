@@ -1,0 +1,53 @@
+{
+  "projectType": "library",
+  "root": "libs/ng-styled",
+  "sourceRoot": "libs/ng-styled/src",
+  "prefix": "ng-jss",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/angular:package",
+      "outputs": ["dist/libs/ng-styled"],
+      "options": {
+        "project": "libs/ng-styled/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/ng-styled/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/ng-styled/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/ng-styled"],
+      "options": {
+        "jestConfig": "libs/ng-styled/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/ng-styled/src/**/*.ts",
+          "libs/ng-styled/src/**/*.html"
+        ]
+      }
+    },
+    "release": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": [
+          {
+            "command": "npx semantic-release"
+          }
+        ],
+        "cwd": "libs/ng-styled"
+      }
+    }
+  },
+  "tags": ["ng-styled"]
+}

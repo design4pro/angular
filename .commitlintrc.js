@@ -24,7 +24,7 @@ module.exports = {
     'scope-enum': [
       2,
       'always',
-      ['docs', 'test', 'package', 'website', 'angular-jss'],
+      ['docs', 'test', 'package', 'website', 'ng-styled'],
     ],
   },
   ignores: [(message) => message.toLowerCase().startsWith('wip')],

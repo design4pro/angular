@@ -1,0 +1,41 @@
+{
+  "name": "@design4pro/ng-styled",
+  "version": "0.0.1",
+  "description": "JSS integration with Angular",
+  "license": "MIT",
+  "keywords": [
+    "angular",
+    "ng",
+    "jss",
+    "css-in-js"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/design4pro/angular.git"
+  },
+  "author": {
+    "name": "Rafał Wolak",
+    "email": "r.wolak@design4.pro",
+    "url": "https://www.design4.pro"
+  },
+  "bugs": {
+    "url": "https://github.com/design4pro/angular/issues/"
+  },
+  "homepage": "https://design4pro.github.io/ng-styled/",
+  "peerDependencies": {
+    "@angular/cdk": "^13.2.0",
+    "@angular/common": "^13.2.0",
+    "@angular/core": "^13.2.0",
+    "rxjs": "^7.5.4",
+    "tslib": "^2.3.0"
+  },
+  "dependencies": {
+    "jss": "^10.9.0",
+    "jss-plugin-camel-case": "^10.9.0",
+    "jss-plugin-global": "^10.9.0",
+    "jss-plugin-rule-value-function": "^10.9.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

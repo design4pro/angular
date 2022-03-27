@@ -39,17 +39,17 @@ yarn add @design4pro/ng-styled
 
 ## Usage
 
-Inject the `StyledModule` module into your root module:
+Inject the `NgStyledModule` module into your root module:
 
 ```ts
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { StyledModule } from '@design4pro/ng-styled';
+import { NgStyledModule } from '@design4pro/ng-styled';
 import { AppComponent } from './app.component';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, StyledModule.forRoot()],
+  imports: [BrowserModule, NgStyledModule.forRoot()],
   providers: [],
   bootstrap: [AppComponent],
 })
@@ -113,14 +113,14 @@ export class AppComponent {
 import { create, Jss } from 'jss';
 import extend from 'jss-plugin-extend';
 import propsSort from 'jss-plugin-props-sort';
-import { JssOptions, StyledModule, Theme } from '@design4pro/ng-styled';
+import { JssOptions } from '@design4pro/ng-styled';
 
 const jss: Jss = create({
   // additional JSS plugins @see https://cssinjs.org/plugins?v=v10.9.0
   plugins: [extend(), propsSort()],
 });
 
-const options: JssOptions = {
+const jssOptions: JssOptions = {
   jss: jss,
   normalize: false, // disable normalizing (normalize.css)
 };
@@ -138,7 +138,7 @@ const theme: Theme = {
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, StyledModule.forRoot(options, theme)],
+  imports: [BrowserModule, NgStyledModule.forRoot(jssOptions, theme)],
   providers: [],
   bootstrap: [AppComponent],
 })

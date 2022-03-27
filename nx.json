@@ -1,5 +1,5 @@
 {
-  "npmScope": "@design4pro/angular-jss",
+  "npmScope": "@design4pro/ng-styled",
   "affected": {
     "defaultBase": "main"
   },
@@ -47,5 +47,5 @@
       "style": "css"
     }
   },
-  "defaultProject": "webpage"
+  "defaultProject": "ng-styled-webpage"
 }

@@ -1,8 +1,10 @@
 {
   "version": 2,
   "projects": {
-    "webpage": "apps/webpage",
-    "webpage-e2e": "apps/webpage-e2e",
-    "angular-jss": "libs/angular-jss"
+    "ng-docs": "libs/ng-docs",
+    "ng-polymorphic": "libs/ng-polymorphic",
+    "ng-styled": "libs/ng-styled",
+    "ng-styled-webpage": "apps/ng-styled-webpage",
+    "ng-styled-webpage-e2e": "apps/ng-styled-webpage-e2e"
   }
 }
