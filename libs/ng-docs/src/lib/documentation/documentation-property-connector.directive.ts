@@ -1,0 +1,138 @@
+import { Location } from '@angular/common';
+import {
+  Directive,
+  EventEmitter,
+  Inject,
+  Input,
+  OnChanges,
+  OnInit,
+  Output,
+  TemplateRef,
+} from '@angular/core';
+import { ActivatedRoute, Params, UrlSerializer } from '@angular/router';
+import { BehaviorSubject, Subject } from 'rxjs';
+import { coerceValue } from '../utils/coerce-value';
+import { DocumentationPropertyType } from './documentation.types';
+
+const SERIALIZED_SUFFIX = '$';
+
+@Directive({
+  selector: 'ng-template[documentationPropertyName]',
+  exportAs: 'documentationProperty',
+})
+export class DocumentationPropertyConnectorDirective<T>
+  implements OnInit, OnChanges
+{
+  @Input()
+  documentationPropertyName = '';
+
+  @Input()
+  documentationPropertyMode: DocumentationPropertyType = null;
+
+  @Input()
+  documentationPropertyType = '';
+
+  @Input()
+  documentationPropertyValue: T | null = null;
+
+  @Input()
+  documentationPropertyDeprecated = false;
+
+  @Input()
+  documentationPropertyValues: ReadonlyArray<T> | null = null;
+
+  @Output()
+  readonly documentationPropertyValueChange = new EventEmitter<T | null>();
+
+  readonly changed$ = new Subject<void>();
+
+  readonly emits$ = new BehaviorSubject(1);
+
+  constructor(
+    @Inject(TemplateRef) readonly template: TemplateRef<unknown>,
+    @Inject(Location) private readonly locationRef: Location,
+    @Inject(ActivatedRoute) private readonly activatedRoute: ActivatedRoute,
+    @Inject(UrlSerializer) private readonly urlSerializer: UrlSerializer
+  ) {}
+
+  ngOnInit() {
+    this.parseParams(this.activatedRoute.snapshot.queryParams);
+  }
+
+  get attrName(): string {
+    switch (this.documentationPropertyMode) {
+      case 'input':
+        return `[${this.documentationPropertyName}]`;
+      case 'output':
+        return `(${this.documentationPropertyName})`;
+      case 'input-output':
+        return `[(${this.documentationPropertyName})]`;
+      default:
+        return this.documentationPropertyName;
+    }
+  }
+
+  get hasItems(): boolean {
+    return !!this.documentationPropertyValues;
+  }
+
+  get shouldShowValues(): boolean {
+    return this.documentationPropertyMode !== 'output';
+  }
+
+  ngOnChanges() {
+    this.changed$.next();
+  }
+
+  onValueChange(value: T | null) {
+    this.documentationPropertyValue = value;
+    this.documentationPropertyValueChange.emit(value);
+    this.setQueryParam(value);
+  }
+
+  emitEvent(event: unknown) {
+    // For more convenient debugging
+    // eslint-disable-next-line no-restricted-syntax
+    console.info(this.attrName, event);
+    // For more convenient debugging
+    this.emits$.next(this.emits$.value + 1);
+  }
+
+  private parseParams(params: Params) {
+    const propertyValue: string | undefined =
+      params[this.documentationPropertyName];
+    const propertyValueWithSuffix: string | number | undefined =
+      params[`${this.documentationPropertyName}${SERIALIZED_SUFFIX}`];
+
+    if (!propertyValue && !propertyValueWithSuffix) {
+      return;
+    }
+
+    const value =
+      !!propertyValueWithSuffix && this.documentationPropertyValues
+        ? this.documentationPropertyValues[propertyValueWithSuffix as number]
+        : coerceValue(propertyValue);
+
+    this.onValueChange(value as T);
+  }
+
+  private setQueryParam(value: T | string | number | boolean | null) {
+    const tree = this.urlSerializer.parse(this.locationRef.path());
+
+    const isValueAvailableByKey = value instanceof Object;
+    const computedValue =
+      isValueAvailableByKey && this.documentationPropertyValues
+        ? this.documentationPropertyValues.indexOf(value as T)
+        : value;
+
+    const suffix = isValueAvailableByKey ? SERIALIZED_SUFFIX : '';
+    const propName = this.documentationPropertyName + suffix;
+
+    tree.queryParams = {
+      ...tree.queryParams,
+      [propName]: computedValue,
+    };
+
+    this.locationRef.go(String(tree));
+  }
+}

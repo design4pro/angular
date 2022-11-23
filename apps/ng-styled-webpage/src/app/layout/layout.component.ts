@@ -7,7 +7,7 @@ import { COMPONENT_STYLES } from './layout.component.styles';
   templateUrl: './layout.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-@Styled(({ css }) => css(COMPONENT_STYLES))
+@Styled(({ css }) => css(COMPONENT_STYLES, { name: 'layout' }))
 export class LayoutComponent {
   classes: any;
 

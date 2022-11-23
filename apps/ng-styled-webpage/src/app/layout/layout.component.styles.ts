@@ -5,13 +5,15 @@ export const COMPONENT_STYLES: StaticStyle = (theme: Theme) => ({
     display: 'flex',
     alignItems: 'center',
     flexDirection: 'column',
-    padding: theme.spacing(1, 2),
-    '& h1': {
-      ...theme.typography.h4,
-      margin: theme.spacing(0, 1),
-      '& span': {
-        ...theme.typography.subtitle2,
-      },
-    },
+    position: 'fixed',
+    top: '0',
+    right: '0',
+    bottom: '0',
+    left: '0',
+  },
+  main: {
+    display: 'flex',
+    flexGrow: 1,
+    width: '100%',
   },
 });

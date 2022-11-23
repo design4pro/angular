@@ -1,0 +1,66 @@
+<h3 *ngIf="heading" class="t-title">
+  <span>
+    <ng-container *ngPolyOutlet="{ content as text }">{{ text }}</ng-container>
+  </span>
+  <button
+    *ngIf="id"
+    type="button"
+    class="t-link-icon"
+    [title]="copy$ | async"
+    (click)="copyExampleLink()"
+  ></button>
+</h3>
+<h4 *ngIf="description" class="t-description">
+  <ng-container *ngPolyOutlet="{ description as text }">{{
+    text
+  }}</ng-container>
+</h4>
+
+<div *ngIf="processor$ | async as content" class="t-example">
+  <ng-container *ngIf="content | ngDocsExampleGetTabs: defaultTab as tabs">
+    <div class="t-tabs-wrapper">
+      <div class="t-tabs" [(activeItemIndex)]="activeItemIndex">
+        <ng-container *ngFor="let tab of tabs">
+          <button>{{ tab }}</button>
+        </ng-container>
+      </div>
+
+      <button
+        *ngIf="codeEditor"
+        (click)="codeEditor.open(componentName, id || '', content)"
+      >
+        Edit on {{ codeEditor.name }}
+      </button>
+    </div>
+
+    <div
+      *ngFor="let tab of tabs; let index = index"
+      class="t-content"
+      [class.t-content_visible]="activeItemIndex === index"
+    >
+      <ng-container *ngIf="index === defaultTabIndex; else anotherTab">
+        <ng-container *ngTemplateOutlet="preview"></ng-container>
+      </ng-container>
+      <ng-template #anotherTab>
+        <ng-container
+          *ngTemplateOutlet="
+            codeSection;
+            context: { $implicit: content[tabs[activeItemIndex]] || '' }
+          "
+        >
+        </ng-container>
+      </ng-template>
+    </div>
+  </ng-container>
+</div>
+
+<ng-template #preview>
+  <div automation-id="tui-doc-example" class="t-demo">
+    <ng-content></ng-content>
+  </div>
+</ng-template>
+
+<ng-template #codeSection let-code>
+  <ng-docs-copy class="t-copy-code" [cdkCopyToClipboard]="code"></ng-docs-copy>
+  <ng-docs-code [code]="code"></ng-docs-code>
+</ng-template>

@@ -1,0 +1,42 @@
+{
+  "projectType": "library",
+  "root": "libs/ng-polymorphic",
+  "sourceRoot": "libs/ng-polymorphic/src",
+  "prefix": "ng-poly",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/angular:package",
+      "outputs": ["dist/libs/ng-polymorphic"],
+      "options": {
+        "project": "libs/ng-polymorphic/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/ng-polymorphic/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/ng-polymorphic/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/ng-polymorphic"],
+      "options": {
+        "jestConfig": "libs/ng-polymorphic/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/ng-polymorphic/src/**/*.ts",
+          "libs/ng-polymorphic/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": ["polymorphic"]
+}

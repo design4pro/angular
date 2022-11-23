@@ -1,0 +1,45 @@
+{
+  "name": "@design4pro/ng-docs",
+  "version": "0.0.1",
+  "description": "Library for developing documentation portals for Angular libraries.",
+  "license": "MIT",
+  "keywords": [
+    "angular",
+    "component",
+    "library",
+    "docs",
+    "documentation"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/design4pro/angular.git"
+  },
+  "author": {
+    "name": "Rafał Wolak",
+    "email": "r.wolak@design4.pro",
+    "url": "https://www.design4.pro"
+  },
+  "bugs": {
+    "url": "https://github.com/design4pro/angular/issues/"
+  },
+  "homepage": "https://design4pro.github.io/ng-docs/",
+  "peerDependencies": {
+    "@angular/animations": ">=13.0.0",
+    "@angular/common": ">=13.0.0",
+    "@angular/core": ">=13.0.0"
+  },
+  "dependencies": {
+    "@design4pro/ng-styled": "^0.0.1",
+    "@ng-web-apis/common": "^2.0.0",
+    "highlight.js": "^11.3.1",
+    "ngx-highlightjs": "^4.1.4",
+    "markdown-it": "^12.3.2",
+    "tslib": "^2.3.0"
+  },
+  "devDependencies": {
+    "@types/markdown-it": "^12.2.3"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

@@ -7,7 +7,7 @@ import { COMPONENT_STYLES } from './layout-header.component.styles';
   templateUrl: './layout-header.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-@Styled(({ css }) => css(COMPONENT_STYLES))
+@Styled(({ css }) => css(COMPONENT_STYLES, { name: 'layout-header' }))
 export class LayoutHeaderComponent {
   classes: any;
 

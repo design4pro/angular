@@ -1,0 +1,6 @@
+<ng-container *ngIf="!!sourceCode">
+  <ng-container
+    *ngPolyOutlet="sourceCode as text; context: getContext(pathOptions)"
+    >{{ text }}</ng-container
+  >
+</ng-container>

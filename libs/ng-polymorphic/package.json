@@ -1,0 +1,34 @@
+{
+  "name": "@design4pro/ng-polymorphic",
+  "version": "0.0.1",
+  "description": "Library for polymorphic templates in Angular.",
+  "license": "MIT",
+  "keywords": [
+    "angular",
+    "library",
+    "polymorphic"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/design4pro/angular.git"
+  },
+  "author": {
+    "name": "Rafał Wolak",
+    "email": "r.wolak@design4.pro",
+    "url": "https://www.design4.pro"
+  },
+  "bugs": {
+    "url": "https://github.com/design4pro/angular/issues/"
+  },
+  "homepage": "https://design4pro.github.io/ng-polymorphic/",
+  "peerDependencies": {
+    "@angular/common": "^13.2.0",
+    "@angular/core": "^13.2.0"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

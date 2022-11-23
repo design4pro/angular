@@ -1,0 +1,72 @@
+<nav class="t-navigation">
+  <div *ngFor="let label of labels; index as index">
+    <span class="t-label">
+      <strong>{{ label }}</strong>
+    </span>
+    <div class="t-section">
+      <ng-container *ngFor="let item of items[index]; index as subIndex">
+        <ng-container
+          *ngTemplateOutlet="
+            pages;
+            context: { item: item, index: index * 100 + subIndex }
+          "
+        >
+        </ng-container>
+      </ng-container>
+    </div>
+  </div>
+  <div class="t-items-container">
+    <ng-container *ngFor="let item of itemsWithoutSections; let index = index">
+      <ng-container
+        *ngTemplateOutlet="
+          pages;
+          context: { item: item, index: items.length - 1 + index }
+        "
+      >
+      </ng-container>
+    </ng-container>
+  </div>
+
+  <ng-template #pages let-item="item" let-index="index">
+    <a
+      *ngIf="!item.subPages; else subPages"
+      routerLinkActive="sublink_active"
+      class="t-sublink"
+      [routerLink]="item.route"
+      (click)="closeMenu()"
+    >
+      {{ item.title }}
+    </a>
+    <ng-template #subPages>
+      <div
+        routerLinkActive
+        class="t-subsection"
+        [routerLinkActiveOptions]="{ exact: false }"
+      >
+        <button
+          *ngIf="item.subPages"
+          tuiLink
+          type="button"
+          class="t-sublink t-sublink_subsection"
+          (click)="onGroupClick(index)"
+        >
+          {{ item.title }}
+        </button>
+        <div class="t-section t-section_bordered">
+          <a
+            *ngFor="let subPage of item.subPages"
+            tuiLink
+            routerLinkActive="sublink_active"
+            class="t-sublink t-sublink_small"
+            [routerLink]="subPage.route"
+            (click)="closeMenu()"
+          >
+            {{ subPage.title }}
+          </a>
+        </div>
+      </div>
+    </ng-template>
+  </ng-template>
+</nav>
+
+<ng-content></ng-content>

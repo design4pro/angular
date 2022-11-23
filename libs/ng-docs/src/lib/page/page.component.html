@@ -1,0 +1,50 @@
+<header class="t-header">
+  <h1 class="t-title">
+    {{ header }}
+    <span *ngIf="deprecated !== null" class="t-tag t-tag_deprecated">{{
+      deprecated
+    }}</span>
+    <span *ngIf="package" class="t-tag t-tag_package">{{ package }}</span>
+  </h1>
+  <ng-container
+    *ngFor="let tab of tabConnectors; first as first; index as index"
+  >
+    <ng-container *ngIf="first; else dynamicTab">
+      <a
+        routerLink="./"
+        routerLinkActive
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        {{ tab.pageTab || defaultTabs[index] }}
+      </a>
+    </ng-container>
+    <ng-template #dynamicTab>
+      <a
+        routerLinkActive
+        [routerLink]="getRouterLink(tab.pageTab || defaultTabs[index])"
+      >
+        {{ tab.pageTab || defaultTabs[index] }}
+      </a>
+    </ng-template>
+  </ng-container>
+  <ng-docs-source-code
+    class="t-source-code"
+    [header]="header"
+    [package]="package"
+    [type]="type"
+    [path]="path"
+  ></ng-docs-source-code>
+</header>
+<div class="t-content">
+  <ng-content></ng-content>
+  <ng-docs-see-also
+    *ngIf="showSeeAlso"
+    class="t-see-also"
+    [seeAlso]="seeAlso"
+  ></ng-docs-see-also>
+  <ng-container *ngFor="let tab of tabConnectors; index as index">
+    <ng-container *ngIf="index === activeItemIndex">
+      <ng-container *ngTemplateOutlet="tab.template"></ng-container>
+    </ng-container>
+  </ng-container>
+</div>

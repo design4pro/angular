@@ -1,0 +1,42 @@
+{
+  "projectType": "library",
+  "root": "libs/ng-docs",
+  "sourceRoot": "libs/ng-docs/src",
+  "prefix": "ng-docs",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/angular:package",
+      "outputs": ["dist/libs/ng-docs"],
+      "options": {
+        "project": "libs/ng-docs/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/ng-docs/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/ng-docs/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/ng-docs"],
+      "options": {
+        "jestConfig": "libs/ng-docs/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/ng-docs/src/**/*.ts",
+          "libs/ng-docs/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": ["docs"]
+}
