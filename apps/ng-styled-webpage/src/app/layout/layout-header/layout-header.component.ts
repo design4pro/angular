@@ -9,7 +9,7 @@ import { COMPONENT_STYLES } from './layout-header.component.styles';
 })
 @Styled(({ css }) => css(COMPONENT_STYLES))
 export class LayoutHeaderComponent {
-  classes: { host: string } | undefined;
+  classes: { host: string; h1: string } | undefined;
 
   @HostBinding('class')
   get className() {
