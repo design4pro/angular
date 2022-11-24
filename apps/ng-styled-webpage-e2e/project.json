@@ -7,8 +7,9 @@
     "e2e": {
       "executor": "@nrwl/cypress:cypress",
       "options": {
-        "cypressConfig": "apps/ng-styled-webpage-e2e/cypress.json",
-        "devServerTarget": "ng-styled-webpage:serve:development"
+        "cypressConfig": "apps/ng-styled-webpage-e2e/cypress.config.ts",
+        "devServerTarget": "ng-styled-webpage:serve:development",
+        "testingType": "e2e"
       },
       "configurations": {
         "production": {

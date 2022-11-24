@@ -26,7 +26,7 @@ jobs:
           node-version: '18'
 
       - name: Install Dependencies 🔧
-        run: npm install --no-package-lock
+        run: npm install --no-package-lock --legacy-peer-deps
 
       - run: npx nx-cloud start-ci-run
       - run: npx nx affected --target=build --parallel --max-parallel=3
@@ -50,7 +50,7 @@ jobs:
           node-version: '18'
 
       - name: Install Dependencies
-        run: npm install --no-package-lock
+        run: npm install --no-package-lock --legacy-peer-deps
 
       - run: npx nx-cloud start-ci-run
       - run: npx nx affected --target=build --parallel --max-parallel=3
@@ -72,7 +72,7 @@ jobs:
           node-version: '18'
 
       - name: Install Dependencies
-        run: npm install --no-package-lock
+        run: npm install --no-package-lock --legacy-peer-deps
 
       - name: Start Nx Agent ${{ matrix.agent }}
         run: npx nx-cloud start-agent

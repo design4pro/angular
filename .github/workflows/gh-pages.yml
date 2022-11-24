@@ -22,7 +22,7 @@ jobs:
           fetch-depth: 0
 
       - name: Install Dependencies 🔧
-        run: npm install --no-package-lock
+        run: npm install --no-package-lock --legacy-peer-deps
       - run: npm run build -- --prod --baseHref=/ng-styled/
 
       - name: Deploy to GitHub Pages 🚀
