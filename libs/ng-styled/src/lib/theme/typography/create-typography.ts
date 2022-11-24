@@ -1,4 +1,4 @@
-import deepmerge from '../../utils/deepmerge';
+import deepmerge from 'ts-deepmerge';
 import { Palette } from '../palette/types';
 import { CSSProperties, Typography, TypographyOptions } from './types';
 

@@ -23,7 +23,7 @@ jobs:
 
       - uses: actions/setup-node@v1
         with:
-          node-version: '14'
+          node-version: '18'
 
       - name: Install Dependencies 🔧
         run: npm install --no-package-lock
@@ -47,7 +47,7 @@ jobs:
 
       - uses: actions/setup-node@v1
         with:
-          node-version: '14'
+          node-version: '18'
 
       - name: Install Dependencies
         run: npm install --no-package-lock
@@ -69,7 +69,7 @@ jobs:
 
       - uses: actions/setup-node@v1
         with:
-          node-version: '14'
+          node-version: '18'
 
       - name: Install Dependencies
         run: npm install --no-package-lock

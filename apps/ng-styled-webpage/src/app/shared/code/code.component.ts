@@ -5,7 +5,6 @@ import { GITHUB_STYLES } from './code.component.styles';
 @Component({
   selector: 'ng-styled-code',
   templateUrl: './code.component.html',
-  styleUrls: ['./code.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 @Styled(({ css }) => {

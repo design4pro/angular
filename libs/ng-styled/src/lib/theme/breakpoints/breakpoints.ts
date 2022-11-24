@@ -1,4 +1,4 @@
-import deepmerge from '../../utils/deepmerge';
+import deepmerge from "ts-deepmerge";
 import merge from '../../utils/merge';
 import { Breakpoints } from './types';
 

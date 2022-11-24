@@ -16,8 +16,6 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@design4pro/ng-docs": ["libs/ng-docs/src/index.ts"],
-      "@design4pro/ng-polymorphic": ["libs/ng-polymorphic/src/index.ts"],
       "@design4pro/ng-styled": ["libs/ng-styled/src/index.ts"]
     }
   },

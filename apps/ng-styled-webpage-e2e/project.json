@@ -1,5 +1,6 @@
 {
-  "root": "apps/ng-styled-webpage-e2e",
+  "name": "ng-styled-webpage-e2e",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "apps/ng-styled-webpage-e2e/src",
   "projectType": "application",
   "targets": {

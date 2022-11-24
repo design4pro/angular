@@ -1,4 +1,4 @@
-import deepmerge from './deepmerge';
+import deepmerge from 'ts-deepmerge';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 function merge(acc: any, item: any) {

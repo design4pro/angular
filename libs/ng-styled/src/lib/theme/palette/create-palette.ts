@@ -1,11 +1,11 @@
-import deepmerge from '../../utils/deepmerge';
+import deepmerge from 'ts-deepmerge';
 import common from './common';
 import { Palette } from './types';
 
 export function createPalette(palette: Palette): Palette {
   const { mode = 'light', ...other } = palette;
 
-  const paletteOutput = deepmerge<Palette>(
+  const paletteOutput = deepmerge(
     {
       // A collection of common colors.
       common: common,
@@ -13,7 +13,7 @@ export function createPalette(palette: Palette): Palette {
       mode,
     },
     other
-  );
+  ) as Palette;
 
   return paletteOutput;
 }

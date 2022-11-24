@@ -1,4 +1,4 @@
-import deepmerge from '../utils/deepmerge';
+import deepmerge from "ts-deepmerge";
 import { Breakpoints } from './breakpoints';
 import createBreakpoints from './breakpoints/create-breakpoints';
 import createPalette from './palette/create-palette';
@@ -23,7 +23,7 @@ export function createTheme(options: Partial<Theme> = {}, ...args: any): Theme {
   const spacing = createSpacing(spacingInput as SpacingOptions);
   const typography = createTypography(palette, typographyInput);
 
-  let theme = deepmerge<Theme>(
+  let theme = deepmerge(
     {
       breakpoints: breakpoints,
       direction: 'ltr',
@@ -32,11 +32,11 @@ export function createTheme(options: Partial<Theme> = {}, ...args: any): Theme {
       typography: typography,
     },
     other
-  );
+  ) as Theme;
 
   theme = args.reduce(
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    (acc: Theme, argument: any) => deepmerge<Theme>(acc, argument),
+    (acc: Theme, argument: any) => deepmerge(acc, argument),
     theme
   );
 
