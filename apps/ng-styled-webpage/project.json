@@ -1,0 +1,192 @@
+{
+  "name": "ng-styled-webpage",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "apps/ng-styled-webpage/src",
+  "prefix": "",
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:browser",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "options": {
+        "outputPath": "dist/apps/ng-styled-webpage/browser",
+        "index": "apps/ng-styled-webpage/src/index.html",
+        "main": "apps/ng-styled-webpage/src/main.ts",
+        "polyfills": [
+          "zone.js"
+        ],
+        "tsConfig": "apps/ng-styled-webpage/tsconfig.app.json",
+        "assets": [
+          "apps/ng-styled-webpage/src/favicon.ico",
+          "apps/ng-styled-webpage/src/assets"
+        ],
+        "styles": [],
+        "scripts": [],
+        "allowedCommonJsDependencies": [
+          "ts-deepmerge"
+        ]
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "fileReplacements": [
+            {
+              "replace": "apps/ng-styled-webpage/src/environments/environment.ts",
+              "with": "apps/ng-styled-webpage/src/environments/environment.prod.ts"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "configurations": {
+        "production": {
+          "browserTarget": "ng-styled-webpage:build:production"
+        },
+        "development": {
+          "browserTarget": "ng-styled-webpage:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "browserTarget": "ng-styled-webpage:build"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "apps/ng-styled-webpage/src/**/*.ts",
+          "apps/ng-styled-webpage/src/**/*.html"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": [
+        "{workspaceRoot}/coverage/{projectRoot}"
+      ],
+      "options": {
+        "jestConfig": "apps/ng-styled-webpage/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "server": {
+      "executor": "@angular-devkit/build-angular:server",
+      "options": {
+        "outputPath": "dist/apps/ng-styled-webpage/server",
+        "main": "apps/ng-styled-webpage/server.ts",
+        "tsConfig": "apps/ng-styled-webpage/tsconfig.server.json"
+      },
+      "configurations": {
+        "production": {
+          "outputHashing": "media",
+          "fileReplacements": [
+            {
+              "replace": "apps/ng-styled-webpage/src/environments/environment.ts",
+              "with": "apps/ng-styled-webpage/src/environments/environment.prod.ts"
+            }
+          ]
+        },
+        "development": {
+          "optimization": false,
+          "sourceMap": true,
+          "extractLicenses": false
+        }
+      },
+      "defaultConfiguration": "production",
+      "production": {
+        "outputHashing": "media",
+        "fileReplacements": [
+          {
+            "replace": "apps/ng-styled-webpage/src/environments/environment.ts",
+            "with": "apps/ng-styled-webpage/src/environments/environment.prod.ts"
+          }
+        ]
+      },
+      "development": {
+        "optimization": false,
+        "sourceMap": true,
+        "extractLicenses": false
+      }
+    },
+    "serve-ssr": {
+      "executor": "@nguniversal/builders:ssr-dev-server",
+      "configurations": {
+        "development": {
+          "browserTarget": "ng-styled-webpage:build:development",
+          "serverTarget": "ng-styled-webpage:server:development"
+        },
+        "production": {
+          "browserTarget": "ng-styled-webpage:build:production",
+          "serverTarget": "ng-styled-webpage:server:production"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "prerender": {
+      "executor": "@nguniversal/builders:prerender",
+      "options": {
+        "routes": [
+          "/"
+        ]
+      },
+      "configurations": {
+        "production": {
+          "browserTarget": "ng-styled-webpage:build:production",
+          "serverTarget": "ng-styled-webpage:server:production"
+        },
+        "development": {
+          "browserTarget": "ng-styled-webpage:build:development",
+          "serverTarget": "ng-styled-webpage:server:development"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "app-shell": {
+      "executor": "@angular-devkit/build-angular:app-shell",
+      "options": {
+        "route": "shell"
+      },
+      "configurations": {
+        "production": {
+          "browserTarget": "ng-styled-webpage:build:production",
+          "serverTarget": "ng-styled-webpage:server:production"
+        },
+        "development": {
+          "browserTarget": "ng-styled-webpage:build:development",
+          "serverTarget": "ng-styled-webpage:server:development"
+        }
+      },
+      "defaultConfiguration": "production"
+    }
+  },
+  "tags": []
+}
