@@ -72,7 +72,7 @@ jobs:
           node-version: '18'
 
       - name: Install Dependencies
-        run: npm install --no-package-lock
+        run: npm install --no-package-lock --legacy-peer-deps
 
       - name: Start Nx Agent ${{ matrix.agent }}
         run: npx nx-cloud start-agent
