@@ -20,10 +20,10 @@ jobs:
 
       - name: Install Dependencies 🔧
         run: npm install --no-package-lock --legacy-peer-deps
-      - run: npm run build -- --prod --baseHref=/ng-styled/
+      - run: npm run build -- --prod --baseHref=/angular/
 
       - name: Deploy to GitHub Pages 🚀
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist/apps/ng-styled-webpage
+          publish_dir: ./dist/apps/ng-styled-webpage/browser
