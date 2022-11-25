@@ -31,10 +31,10 @@
     "help": "nx help",
     "prerelease": "nx affected:build --all",
     "release": "nx affected --target release --all",
-    "dev:ssr": "ng run webpage:serve-ssr",
-    "serve:ssr": "node dist/webpage/server/main.js",
-    "build:ssr": "ng build && ng run webpage:server",
-    "prerender": "ng run webpage:prerender"
+    "dev:ssr": "ng run ng-styled-webpage:serve-ssr",
+    "serve:ssr": "node dist/ng-styled-webpage/server/main.js",
+    "build:ssr": "ng build && ng run ng-styled-webpage:server",
+    "prerender": "ng run ng-styled-webpage:prerender"
   },
   "private": true,
   "dependencies": {
