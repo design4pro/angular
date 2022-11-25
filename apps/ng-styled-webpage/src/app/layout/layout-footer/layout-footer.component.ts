@@ -5,4 +5,6 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   templateUrl: './layout-footer.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class LayoutFooterComponent {}
+export class LayoutFooterComponent {
+  year = new Date().getFullYear();
+}

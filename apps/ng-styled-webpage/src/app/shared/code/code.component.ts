@@ -16,7 +16,7 @@ import { GITHUB_STYLES } from './code.component.styles';
   );
 })
 export class CodeComponent {
-  classes: any;
+  classes: { root: string } | undefined;
 
   @Input()
   code = '';

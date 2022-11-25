@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
 import { createGenerateId, SheetsRegistry } from 'jss';
-import { StyledOptions, StyledTheme } from './styled.options';
 import { JssContext, JssStore } from './jss/context';
 import { manageSheet } from './jss/managers';
 import { JssManagers, StaticStyles } from './jss/types';
 import getSheetIndex from './jss/utils/get-sheet-index';
 import { createStyleSheet } from './jss/utils/sheets';
+import { StyledOptions, StyledTheme } from './styled.options';
 import normalize from './styles/normalize';
 import { ThemeContext, ThemeStore } from './theme/theme-context';
 import shallowEqualObjects from './utils/shallow-equal-objects';

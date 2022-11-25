@@ -33,7 +33,7 @@ import { Styled, StyledProp } from '@design4pro/ng-styled';
 })
 export class HomeComponent {
   title = 'Angular JSS';
-  classes: any;
+  classes: { root: string; title: string; hint: string } | undefined;
 
   code = `
     import { ChangeDetectionStrategy, Component } from '@angular/core';
