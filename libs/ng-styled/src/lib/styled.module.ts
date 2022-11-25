@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { APP_INITIALIZER, ModuleWithProviders, NgModule } from '@angular/core';
+import { JssStore } from './jss/context';
 import {
   StyledOptions,
   styledOptionsFactory,
@@ -8,8 +9,7 @@ import {
   STYLED_OPTIONS_INJECTOR,
   STYLED_THEME_INJECTOR,
 } from './styled.options';
-import { StyledService, styledFactory } from './styled.service';
-import { JssStore } from './jss/context';
+import { styledFactory, StyledService } from './styled.service';
 import defaultTheme from './theme/default-theme';
 import { ThemeStore } from './theme/theme-context';
 

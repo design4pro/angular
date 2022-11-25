@@ -2,8 +2,8 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {
   createTheme,
-  StyledModule,
   Options,
+  StyledModule,
   Theme,
 } from '@design4pro/ng-styled';
 import { create, Jss } from 'jss';

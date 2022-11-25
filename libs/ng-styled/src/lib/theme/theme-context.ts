@@ -1,15 +1,16 @@
 import { Injectable } from '@angular/core';
 import { Store } from '../utils/store';
+import defaultTheme from './default-theme';
 import { Theme } from './types';
 
-export class ThemeContext implements Partial<Theme> {}
+export type ThemeContext = Partial<Theme>;
 
 @Injectable()
 export class ThemeStore extends Store<ThemeContext> {
   private static instance: ThemeStore;
 
   constructor() {
-    super(new ThemeContext());
+    super(defaultTheme);
   }
 
   static getInstance(): ThemeStore {

@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { LayoutHeaderComponent } from './layout-header.component';
 
 describe('LayoutHeaderComponent', () => {
