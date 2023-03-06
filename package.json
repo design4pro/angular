@@ -64,7 +64,7 @@
     "ngx-highlightjs": "^7.0.1",
     "rxjs": "~7.5.0",
     "ts-deepmerge": "^5.0.0",
-    "zone.js": "~0.11.4"
+    "zone.js": "~0.13.0"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~15.0.0",
